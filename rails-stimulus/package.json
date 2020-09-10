@@ -1,0 +1,22 @@
+{
+  "name": "rails_stimulus",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": {
+    "@rails/actioncable": "6.0.3-2",
+    "@rails/ujs": "6.0.0",
+    "@rails/webpacker": "5.1.1",
+    "stimulus": "1.1.1",
+    "stimulus_reflex": "3.3.0-pre3",
+    "turbolinks": "5.2.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "3.11.0"
+  },
+  "scripts": {
+    "serve": "bin/webpack-dev-server --hide-modules"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

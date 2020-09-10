@@ -1,0 +1,36 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - db/schema.rb
+    - node_modules/**/*
+    - bin/**/*
+    - tmp/**/*
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
