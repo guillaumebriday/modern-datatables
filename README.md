@@ -6,7 +6,7 @@
 
 This project shows how to build a **modern** real life application with in two different ways.
 
-They are many ways to build **reactive** web interfaces but do we really need to add the complexity of JavaScript frameworks like [Vue.js](https://vuejs.org/) or [React](https://reactjs.org/)? 
+They are many ways to build **reactive** web interfaces but do we really need to add the complexity of JavaScript frameworks like [Vue.js](https://vuejs.org/) or [React](https://reactjs.org/)?
 
 These tools are very powerful but the complexity they add to a full-stack developer's workflow is **INSANE**.
 
@@ -19,6 +19,13 @@ In this repo, you'll find two apps:
 They have the exact same features and level of responsiveness.
 
 I'll talk about all the differences in a [blog post](https://guillaumebriday.fr/articles) soon.
+
+## Demo
+
+Both example are available online 🥳:
+
+- [https://rails-vuejs.guillaumebriday.me](https://rails-vuejs.guillaumebriday.me)
+- [https://rails-stimulus.guillaumebriday.me](https://rails-stimulus.guillaumebriday.me)
 
 ## Resources
 
