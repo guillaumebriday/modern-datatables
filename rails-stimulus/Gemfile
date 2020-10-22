@@ -18,6 +18,14 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+
+  gem 'bcrypt_pbkdf'
+  gem 'capistrano', require: false
+  gem 'capistrano3-delayed-job', require: false
+  gem 'capistrano3-puma', '~> 4.0', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'ed25519'
 end
 
 group :development do
