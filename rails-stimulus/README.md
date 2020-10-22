@@ -14,7 +14,7 @@ Development environment requirements:
 $ git clone git@github.com:guillaumebriday/modern-datatables.git && cd modern-datatables/rails-stimulus
 $ bundle
 $ rails dev:cache
-$ bundle exec rails db:migration
+$ bundle exec rails db:migre
 $ bundle exec rails s
 ```
 
