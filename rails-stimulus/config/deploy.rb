@@ -8,6 +8,7 @@ set :repo_url, 'git@github.com:guillaumebriday/modern-datatables.git'
 set :repo_tree, 'rails-stimulus'
 set :user, 'deploy'
 set :deploy_to, "/home/#{fetch(:user)}/www/#{fetch(:application)}"
+set :ssh_options, forward_agent: true
 set :default_env, {
   'DATABASE_URL' => 'nothing'
 }
