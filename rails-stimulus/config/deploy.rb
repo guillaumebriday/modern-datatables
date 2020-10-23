@@ -10,7 +10,7 @@ set :user, 'deploy'
 set :deploy_to, "/home/#{fetch(:user)}/www/#{fetch(:application)}"
 set :ssh_options, forward_agent: true
 set :default_env, {
-  'DATABASE_URL' => 'nothing'
+  'DATABASE_URL' => "sqlite3://#{fetch(:deploy_to)}/shared/db/production.sqlite3"
 }
 
 set :puma_init_active_record, true
