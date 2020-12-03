@@ -16,7 +16,7 @@ To run the backend:
 ```bash
 $ git clone git@github.com:guillaumebriday/modern-datatables.git && cd modern-datatables/rails-vuejs
 $ bundle
-$ bundle exec rails db:migration
+$ bundle exec rails db:migrate
 $ bundle exec rails s
 ```
 
