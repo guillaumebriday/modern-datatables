@@ -3,9 +3,9 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.1"
 
-set :application, 'rails-stimulus'
+set :application, 'rails-stimulusreflex'
 set :repo_url, 'git@github.com:guillaumebriday/modern-datatables.git'
-set :repo_tree, 'rails-stimulus'
+set :repo_tree, 'rails-stimulusreflex'
 set :user, 'deploy'
 set :deploy_to, "/home/#{fetch(:user)}/www/#{fetch(:application)}"
 set :ssh_options, forward_agent: true

@@ -1,6 +1,6 @@
-# Rails with Stimulus
+# Rails with StimulusReflex
 
-This project is designed to use Rails in his all glory, [as a monolith](https://m.signalvnoise.com/the-majestic-monolith/) with Stimulus.
+This project is designed to use Rails in his all glory, [as a monolith](https://m.signalvnoise.com/the-majestic-monolith/) with [StimulusReflex](https://docs.stimulusreflex.com/).
 
 ## Getting started
 
@@ -11,7 +11,7 @@ Development environment requirements:
 - [Node](https://nodejs.org/en/)
 
 ```bash
-$ git clone git@github.com:guillaumebriday/modern-datatables.git && cd modern-datatables/rails-stimulus
+$ git clone git@github.com:guillaumebriday/modern-datatables.git && cd modern-datatables/rails-stimulusreflex
 $ bundle
 $ rails dev:cache
 $ bundle exec rails db:migrate
