@@ -54,7 +54,6 @@ export default {
 
   watch: {
     page (page) {
-      console.log(page)
       this.$store.dispatch('fetchTodos', { page })
     }
   },

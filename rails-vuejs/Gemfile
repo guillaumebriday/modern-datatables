@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'fast_jsonapi'
+gem 'jsonapi-serializer'
 gem 'pagy'
 gem 'puma'
 gem 'rails'

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.14.1"
+lock '~> 3.14.1'
 
 set :application, 'rails-vuejs'
 set :repo_url, 'git@github.com:guillaumebriday/modern-datatables.git'
@@ -25,7 +25,10 @@ namespace :deploy do
   namespace :check do
     before :linked_files, :set_master_key do
       on roles(:app), in: :sequence, wait: 10 do
-        upload! 'config/master.key', "#{shared_path}/config/master.key" unless test("[ -f #{shared_path}/config/master.key ]")
+        unless test("[ -f #{shared_path}/config/master.key ]")
+          upload! 'config/master.key',
+                  "#{shared_path}/config/master.key"
+        end
       end
     end
   end
