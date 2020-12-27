@@ -1,0 +1,16 @@
+{
+  "name": "rails_hotwire",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": {
+    "@hotwired/turbo-rails": "^7.0.0-beta.1",
+    "@rails/ujs": "^6.1.0",
+    "@rails/webpacker": "5.2.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "serve": "bin/webpack-dev-server --hide-modules"
+  }
+}
