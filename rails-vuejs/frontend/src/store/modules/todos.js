@@ -66,7 +66,7 @@ const actions = {
       })
   },
 
-  addTodo ({}, { params }) {
+  addTodo (_, { params }) {
     return axios.post(state.endpoint, { todo: params })
       .then(({ data }) => {
         return data
