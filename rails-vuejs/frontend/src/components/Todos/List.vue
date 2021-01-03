@@ -12,7 +12,7 @@ div
                 th(class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider") Completed?
                 th(class="px-6 py-3 bg-gray-50")
             tbody
-              tr(v-for="(todo, index) in todos" :key="todo.id")
+              tr(v-for="(todo, index) in todos" :key="todo.id" :class="[index % 2 ? 'bg-white' : 'bg-gray-50']")
                 td(class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900")
                   | {{ todo.attributes.description }}
 
