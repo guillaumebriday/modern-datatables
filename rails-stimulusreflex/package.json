@@ -3,15 +3,15 @@
   "private": true,
   "version": "0.1.0",
   "dependencies": {
-    "@rails/actioncable": "6.0.3-2",
-    "@rails/ujs": "6.0.0",
-    "@rails/webpacker": "5.1.1",
+    "@rails/actioncable": "6.1.4",
+    "@rails/ujs": "6.1.4",
+    "@rails/webpacker": "5.4.0",
     "stimulus": "2.0.0",
-    "stimulus_reflex": "3.4.0",
+    "stimulus_reflex": "3.4.1",
     "turbolinks": "5.2.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "3.11.2"
   },
   "scripts": {
     "serve": "bin/webpack-dev-server --hide-modules"
