@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Todo < ApplicationRecord
+  after_update_commit { broadcast_replace_to 'todos', partial: 'todos/todo', locals: { todo: self } }
+
   validates :description,
             uniqueness: true,
             presence: true

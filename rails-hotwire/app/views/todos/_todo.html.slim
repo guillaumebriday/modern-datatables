@@ -1,4 +1,4 @@
-tr class="#{todo_counter.odd? ? 'bg-white' : 'bg-gray-50'}"
+tr id=dom_id(todo) class="#{local_assigns[:todo_counter]&.odd? ? 'bg-white' : 'bg-gray-50'}"
   td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900"
     = todo.description
 

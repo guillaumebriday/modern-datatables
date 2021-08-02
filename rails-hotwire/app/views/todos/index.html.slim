@@ -1,3 +1,5 @@
+= turbo_stream_from 'todos'
+
 div class="bg-white"
   div class="max-w-screen-xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8"
     div class="text-center"
@@ -23,9 +25,38 @@ div class="pb-5 space-y-3 sm:flex sm:items-center sm:justify-between sm:space-x-
       = link_to new_todo_path, class: 'inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out' do
         ' Create todo
 
-= render 'search'
+= form_for todos_url, method: :get, html: { class: "pb-5 flex mb-0" } do |f|
+  div class="mt-1 relative rounded-md shadow-sm"
+    div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+      svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+
+    = text_field_tag :description, params[:description], class: "form-input block pl-10 sm:text-sm sm:leading-5", placeholder: "Search..."
 
 - if @todos.present?
-  = render 'list'
+  div class="flex flex-col"
+    div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
+      div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8"
+        div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"
+          table class="min-w-full divide-y divide-gray-200"
+            thead
+              tr
+                th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider" Description
+
+                th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider" Completed?
+                th class="px-6 py-3 bg-gray-50"
+
+            tbody
+              = render partial: 'todos/todo', collection: @todos
+
+  = render 'shared/pagy/nav', pagy: @pagy
+
 - else
-  = render 'no_results'
+  div class="rounded-md bg-blue-50 p-4"
+    div class="flex"
+      div class="flex-shrink-0"
+        svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor"
+          path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"
+
+      div class="ml-3 flex-1 md:flex md:justify-between"
+        p class="text-sm leading-5 text-blue-700" There is nothing here.
