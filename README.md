@@ -20,17 +20,15 @@ They have the exact same features and level of responsiveness.
 
 👉 The last one is build with [Rails](https://rubyonrails.org/) and [Hotwire](https://hotwire.dev/) aka NEW MAGIC but it's still in beta.
 
-
-
 I'll talk about all the differences in a [blog post](https://guillaumebriday.fr/articles) soon.
 
 ## Demo
 
 Both example are available online 🥳:
 
-- [https://rails-vuejs.guillaumebriday.me](https://rails-vuejs.guillaumebriday.me)
-- [https://rails-stimulusreflex.guillaumebriday.me](https://rails-stimulusreflex.guillaumebriday.me)
-- [https://rails-hotwire.guillaumebriday.me](https://rails-hotwire.guillaumebriday.me) (Beta)
+- [https://rails-vuejs.guillaumebriday.fr](https://rails-vuejs.guillaumebriday.fr)
+- [https://rails-stimulusreflex.guillaumebriday.fr](https://rails-stimulusreflex.guillaumebriday.fr)
+- [https://rails-hotwire.guillaumebriday.fr](https://rails-hotwire.guillaumebriday.fr) (Beta)
 
 ## Resources
 
