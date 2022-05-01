@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TodosController < ApplicationController
-  before_action :set_todo, only: %i[edit update]
+  before_action :set_todo, only: %i[edit update toggle_completed]
 
   def index
     @title = 'Todos'
@@ -33,12 +33,18 @@ class TodosController < ApplicationController
   def update
     respond_to do |format|
       if @todo.update(todo_params)
-        format.html { redirect_to todos_path(params.slice(:page, :description).permit!), notice: 'Todo was successfully updated.' }
+        format.html { redirect_to todos_path notice: 'Todo was successfully updated.' }
       else
         format.turbo_stream { render turbo_stream: turbo_stream.replace(@todo, partial: 'todos/form') }
         format.html { render :edit }
       end
     end
+  end
+
+  def toggle_completed
+    @todo.update(completed: !@todo.completed?)
+
+    render turbo_stream: turbo_stream.replace(@todo, partial: 'todos/todo', locals: { todo: @todo, todo_counter: params[:todo_counter]&.to_i })
   end
 
   private

@@ -7,9 +7,10 @@ gem 'puma', '~> 4'
 gem 'rails', '~> 6.1.0'
 gem 'sqlite3', '~> 1.4'
 
+gem 'importmap-rails'
 gem 'pagy'
 gem 'slim-rails'
-gem 'webpacker'
+gem 'sprockets-rails'
 gem 'turbo-rails'
 
 group :development, :test do
