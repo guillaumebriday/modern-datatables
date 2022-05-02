@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-# config valid for current version and patch releases of Capistrano
-lock '~> 3.14.1'
-
 set :application, 'rails-hotwire'
 set :repo_url, 'git@github.com:guillaumebriday/modern-datatables.git'
 set :repo_tree, 'rails-hotwire'
