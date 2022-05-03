@@ -26,9 +26,9 @@ I'll talk about all the differences in a [blog post](https://guillaumebriday.fr/
 
 Both example are available online 🥳:
 
+- [https://rails-hotwire.guillaumebriday.fr](https://rails-hotwire.guillaumebriday.fr)
 - [https://rails-vuejs.guillaumebriday.fr](https://rails-vuejs.guillaumebriday.fr)
 - [https://rails-stimulusreflex.guillaumebriday.fr](https://rails-stimulusreflex.guillaumebriday.fr)
-- [https://rails-hotwire.guillaumebriday.fr](https://rails-hotwire.guillaumebriday.fr) (Beta)
 
 ## Resources
 
