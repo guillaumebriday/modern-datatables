@@ -202,6 +202,8 @@ GEM
     sshkit (1.21.2)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    stimulus-rails (1.0.4)
+      railties (>= 6.0.0)
     temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.10)
@@ -240,6 +242,7 @@ DEPENDENCIES
   slim-rails
   sprockets-rails
   sqlite3 (~> 1.4)
+  stimulus-rails
   turbo-rails
 
 BUNDLED WITH
