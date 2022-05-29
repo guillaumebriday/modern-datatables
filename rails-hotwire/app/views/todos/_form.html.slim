@@ -4,7 +4,7 @@
       = f.label :description, class: "block text-sm font-medium leading-5 text-gray-700"
 
       div class="mt-1 rounded-md shadow-sm"
-        = f.text_field :description, placeholder: 'Your description', class: "form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 #{f.object.errors[:description].present? ? 'border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red' : ''}"
+        = f.text_field :description, placeholder: 'Your description', class: "form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 #{'border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red' if f.object.errors[:description].present?}"
 
       p class="mt-2 text-sm text-red-600" = f.object.errors.full_messages_for(:description).first
 
