@@ -50,6 +50,6 @@ If you're still perplex about this old school approach, you should watch this vi
 
 Do not hesitate to contribute to the project by adapting or adding features ! Bug reports or pull requests are welcome.
 
-##  LicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicense
+##  LicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicenseLicense 
 
 This project is released under the [MIT](http://opensource.org/licenses/MIT) license.
