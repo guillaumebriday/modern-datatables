@@ -18,7 +18,7 @@ In this repo, you'll find three apps:
 
 They have the exact same features and level of responsiveness.
 
-👉 The last one is build with [Rails](https://rubyonrails.org/) and [Hotwire](https://hotwire.dev/) aka NEW MAGIC but it's still in beta.
+👉 The last one is build with [Rails](https://rubyonrails.org/) and [Hotwire](https://hotwire.dev/) aka NEW MAGIC.
 
 I'll talk about all the differences in a [blog post](https://guillaumebriday.fr/articles) soon.
 
