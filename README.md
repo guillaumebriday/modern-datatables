@@ -34,6 +34,7 @@ More and more developers come back from building dedicated SPAs and just want to
 Many projects help you in multiples frameworks:
 - [Hotwire](https://hotwire.dev/)
 - [Laravel Livewire](https://laravel-livewire.com/)
+- [htmx](https://github.com/bigskysoftware/htmx)
 - [Inertiajs](https://inertiajs.com/)
 - [Stimulus Reflex](https://docs.stimulusreflex.com/)
 - [Phoenix Live_View](https://github.com/phoenixframework/phoenix_live_view)
