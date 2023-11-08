@@ -10,15 +10,13 @@ They are many ways to build **reactive** web interfaces but do we really need to
 
 These tools are very powerful but the complexity they add to a full-stack developer's workflow is **INSANE**.
 
-In this repo, you'll find three apps:
+In this repo, you'll find two apps:
 
-👉 One with classic, old school [Rails](https://rubyonrails.org/) application with server rendered views, [Stimulus](https://stimulusjs.org/), [Stimulus Reflex](https://docs.stimulusreflex.com/) and [Turbolinks](https://github.com/turbolinks/turbolinks).
+👉 One is build with [Rails](https://rubyonrails.org/) and [Hotwire](https://hotwire.dev/) aka NEW MAGIC.
 
 👉 The other with Rails as a backend API and Vue.js as a full static SPA in the frontend.
 
 They have the exact same features and level of responsiveness.
-
-👉 The last one is build with [Rails](https://rubyonrails.org/) and [Hotwire](https://hotwire.dev/) aka NEW MAGIC.
 
 I'll talk about all the differences in a [blog post](https://guillaumebriday.fr/articles) soon.
 
@@ -28,7 +26,6 @@ Both example are available online 🥳:
 
 - [https://rails-hotwire.guillaumebriday.fr](https://rails-hotwire.guillaumebriday.fr)
 - [https://rails-vuejs.guillaumebriday.fr](https://rails-vuejs.guillaumebriday.fr)
-- [https://rails-stimulusreflex.guillaumebriday.fr](https://rails-stimulusreflex.guillaumebriday.fr)
 
 ## Resources
 
