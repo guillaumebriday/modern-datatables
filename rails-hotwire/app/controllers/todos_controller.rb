@@ -44,7 +44,8 @@ class TodosController < ApplicationController
   def toggle_completed
     @todo.update(completed: !@todo.completed?)
 
-    render turbo_stream: turbo_stream.replace(@todo, partial: 'todos/todo', locals: { todo: @todo, todo_counter: params[:todo_counter]&.to_i })
+    render turbo_stream: turbo_stream.replace(@todo, partial: 'todos/todo',
+                                                     locals: { todo: @todo, todo_counter: params[:todo_counter]&.to_i })
   end
 
   private
