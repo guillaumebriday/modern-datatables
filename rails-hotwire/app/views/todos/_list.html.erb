@@ -1,0 +1,45 @@
+<%= turbo_frame_tag 'todos_list' do %>
+  <% if @todos.present? %>
+    <div class="flex flex-col">
+      <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+          <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+            <div class="min-w-full divide-y divide-gray-200 table">
+              <div class="table-row">
+                <div class="table-cell px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                  Description
+                </div>
+
+                <div class="table-cell px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                  Completed?
+                </div>
+
+                <div class="table-cell bg-gray-50"></div>
+              </div>
+
+              <%= render partial: 'todos/todo', collection: @todos %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= render 'shared/pagy/nav', pagy: @pagy %>
+  <% else %>
+    <div class="rounded-md bg-blue-50 p-4">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+          </svg>
+        </div>
+
+        <div class="ml-3 flex-1 md:flex md:justify-between">
+          <p class="text-sm leading-5 text-blue-700">
+            There is nothing here.
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

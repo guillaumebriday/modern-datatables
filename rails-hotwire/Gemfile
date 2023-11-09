@@ -11,7 +11,6 @@ gem 'sqlite3'
 
 gem 'importmap-rails'
 gem 'pagy'
-gem 'slim-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
