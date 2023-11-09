@@ -34,3 +34,6 @@ Rails/UniqueValidationWithoutIndex:
 
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
