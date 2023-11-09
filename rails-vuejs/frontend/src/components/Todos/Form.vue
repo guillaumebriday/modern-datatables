@@ -11,7 +11,7 @@ form(@submit.prevent="$emit('input', {...todo})")
 
   div(class="relative flex items-start mt-6")
     div(class="flex items-center h-5")
-      input(v-model="todo.completed" type="checkbox" id="completed" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out")
+      input(v-model="todo.completed" type="checkbox" id="completed" class="form-checkbox h-4 w-4 text-blue-600 transition duration-150 ease-in-out")
 
     div(class="ml-3 text-sm leading-5")
       label(class="font-medium text-gray-700" for="completed") Completed
@@ -23,7 +23,7 @@ form(@submit.prevent="$emit('input', {...todo})")
           | Back
 
       span(class="ml-3 inline-flex rounded-md shadow-sm")
-        button(type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out")
+        button(type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition duration-150 ease-in-out")
           | Save
 </template>
 

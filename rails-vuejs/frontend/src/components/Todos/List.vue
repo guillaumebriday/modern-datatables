@@ -21,7 +21,7 @@ div
                     | {{ todo.attributes.completed }}
 
                 td(class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium")
-                  router-link(:to="{ name: 'edit-todo', params: { id: todo.id } }" class="text-indigo-600 hover:text-indigo-900") Edit
+                  router-link(:to="{ name: 'edit-todo', params: { id: todo.id } }" class="text-blue-600 hover:text-blue-900") Edit
 
   pagination(:links="links" v-model="page")
 </template>

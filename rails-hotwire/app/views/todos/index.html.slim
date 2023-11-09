@@ -22,7 +22,7 @@ div class="pb-5 space-y-3 sm:flex sm:items-center sm:justify-between sm:space-x-
 
   div class="flex space-x-3"
     span class="shadow-sm rounded-md"
-      = link_to new_todo_path, class: 'inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out' do
+      = link_to new_todo_path, class: 'inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-700 active:bg-blue-700 transition duration-150 ease-in-out' do
         ' Create todo
 
 = form_for todos_url, method: :get, html: { class: "pb-5 flex mb-0", data: { turbo_frame: 'todos_list', turbo_action: 'advance' } } do |f|

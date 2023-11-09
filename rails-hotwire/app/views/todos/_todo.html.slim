@@ -5,4 +5,4 @@
     div class="table-cell px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500"
       = button_to "#{todo.completed?}", toggle_completed_todo_path(todo, todo_counter: local_assigns[:todo_counter]), method: :patch, class: "cursor-pointer inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 #{todo.completed? ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}"
     div class="table-cell px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium"
-      = link_to 'Edit', edit_todo_path(todo), class: 'text-indigo-600 hover:text-indigo-900', data: { turbo_frame: '_top' }
+      = link_to 'Edit', edit_todo_path(todo), class: 'text-blue-600 hover:text-blue-900', data: { turbo_frame: '_top' }
