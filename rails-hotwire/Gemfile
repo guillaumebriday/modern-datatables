@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby file: '.ruby-version'
 
-gem 'puma', '~> 4'
+gem 'puma'
 gem 'rails', '< 7.2'
 gem 'sqlite3'
 
@@ -24,11 +24,6 @@ group :development, :test do
   gem 'rubocop-rspec'
 
   gem 'bcrypt_pbkdf'
-  gem 'capistrano', require: false
-  gem 'capistrano3-delayed-job', require: false
-  gem 'capistrano3-puma', '~> 4.0', require: false
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-rvm', require: false
   gem 'ed25519'
 end
 
