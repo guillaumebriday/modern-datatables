@@ -3,8 +3,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby file: '.ruby-version'
-
 gem 'puma'
 gem 'rails', '< 7.2'
 gem 'sqlite3'
@@ -23,9 +21,9 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
 
-  gem 'kamal'
   gem 'bcrypt_pbkdf'
   gem 'ed25519'
+  gem 'kamal'
 end
 
 group :development do

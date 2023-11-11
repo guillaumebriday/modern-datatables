@@ -127,7 +127,6 @@ GEM
       net-smtp
     marcel (1.0.2)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.5)
     minitest (5.20.0)
     mutex_m (0.2.0)
     net-imap (0.4.4)
@@ -143,8 +142,11 @@ GEM
       net-protocol
     net-ssh (7.2.0)
     nio4r (2.5.9)
-    nokogiri (1.15.4)
-      mini_portile2 (~> 2.8.2)
+    nokogiri (1.15.4-aarch64-linux)
+      racc (~> 1.4)
+    nokogiri (1.15.4-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     pagy (5.10.1)
       activesupport
@@ -242,8 +244,9 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.8)
-      mini_portile2 (~> 2.8.0)
+    sqlite3 (1.6.8-aarch64-linux)
+    sqlite3 (1.6.8-arm64-darwin)
+    sqlite3 (1.6.8-x86_64-linux)
     sshkit (1.21.5)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
@@ -266,7 +269,9 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
-  ruby
+  aarch64-linux
+  arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt_pbkdf
@@ -287,8 +292,5 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
 
-RUBY VERSION
-   ruby 3.2.2p53
-
 BUNDLED WITH
-   2.4.21
+   2.4.22
