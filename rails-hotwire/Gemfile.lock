@@ -74,39 +74,17 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
-    airbrussh (1.5.0)
-      sshkit (>= 1.6.1, != 1.7.0)
     ast (2.4.2)
     base64 (0.2.0)
     bcrypt_pbkdf (1.1.0)
     bigdecimal (3.1.4)
     builder (3.2.4)
     byebug (11.1.3)
-    capistrano (3.18.0)
-      airbrussh (>= 1.0.0)
-      i18n
-      rake (>= 10.0.0)
-      sshkit (>= 1.9.0)
-    capistrano-bundler (2.0.1)
-      capistrano (~> 3.1)
-    capistrano-rails (1.6.2)
-      capistrano (~> 3.1)
-      capistrano-bundler (>= 1.1, < 3)
-    capistrano-rvm (0.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
-    capistrano3-delayed-job (1.7.6)
-      capistrano (~> 3.0, >= 3.0.0)
-      daemons (~> 1.3)
-    capistrano3-puma (4.0.0)
-      capistrano (~> 3.7)
-      capistrano-bundler
-      puma (~> 4.0)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
-    daemons (1.4.1)
     date (3.3.4)
+    dotenv (2.8.1)
     drb (2.2.0)
       ruby2_keywords
     ed25519 (1.3.0)
@@ -125,6 +103,16 @@ GEM
       rdoc
       reline (>= 0.3.8)
     json (2.6.3)
+    kamal (1.1.0)
+      activesupport (>= 7.0)
+      bcrypt_pbkdf (~> 1.0)
+      concurrent-ruby (~> 1.2)
+      dotenv (~> 2.8)
+      ed25519 (~> 1.2)
+      net-ssh (~> 7.0)
+      sshkit (~> 1.21)
+      thor (~> 1.2)
+      zeitwerk (~> 2.5)
     language_server-protocol (3.17.0.3)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -139,7 +127,6 @@ GEM
       net-smtp
     marcel (1.0.2)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.5)
     minitest (5.20.0)
     mutex_m (0.2.0)
     net-imap (0.4.4)
@@ -155,8 +142,11 @@ GEM
       net-protocol
     net-ssh (7.2.0)
     nio4r (2.5.9)
-    nokogiri (1.15.4)
-      mini_portile2 (~> 2.8.2)
+    nokogiri (1.15.4-aarch64-linux)
+      racc (~> 1.4)
+    nokogiri (1.15.4-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     pagy (5.10.1)
       activesupport
@@ -166,7 +156,7 @@ GEM
       racc
     psych (5.1.1.1)
       stringio
-    puma (4.3.12)
+    puma (6.4.0)
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (3.0.8)
@@ -254,8 +244,9 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.8)
-      mini_portile2 (~> 2.8.0)
+    sqlite3 (1.6.8-aarch64-linux)
+    sqlite3 (1.6.8-arm64-darwin)
+    sqlite3 (1.6.8-x86_64-linux)
     sshkit (1.21.5)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
@@ -278,21 +269,19 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
-  ruby
+  aarch64-linux
+  arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt_pbkdf
   byebug
-  capistrano
-  capistrano-rails
-  capistrano-rvm
-  capistrano3-delayed-job
-  capistrano3-puma (~> 4.0)
   ed25519
   importmap-rails
+  kamal
   listen (~> 3.3)
   pagy
-  puma (~> 4)
+  puma
   rails (< 7.2)
   rubocop
   rubocop-performance
@@ -303,8 +292,5 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
 
-RUBY VERSION
-   ruby 3.2.2p53
-
 BUNDLED WITH
-   2.4.21
+   2.4.22
