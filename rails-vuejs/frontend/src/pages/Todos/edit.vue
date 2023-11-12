@@ -1,9 +1,13 @@
-<template lang="pug">
-div
-  div(class="mt-4 pt-4")
-    h3(class="text-lg leading-6 font-medium text-gray-900") Editing Todo
+<template>
+<div>
+  <div class="mt-4 pt-4">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      Editing Todo
+    </h3>
+  </div>
 
-  todos-form(v-model="todo" :error="error")
+  <TodosForm v-model="todo" :error="error" />
+</div>
 </template>
 
 <script>

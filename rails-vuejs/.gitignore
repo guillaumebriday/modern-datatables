@@ -3,7 +3,7 @@ rerun.txt
 *.swo
 *.DS_Store
 .bundle
-db/*.sqlite3
+db/*.sqlite3*
 log/*.log
 .sass-cache/
 tmp/*
@@ -22,3 +22,4 @@ routes.txt
 /storage
 yarn-error.log
 app/views
+.env

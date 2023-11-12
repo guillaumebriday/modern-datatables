@@ -1,9 +1,11 @@
-<template lang="pug">
-  div(class="min-h-screen flex flex-col")
-    div(class="container mx-auto p-4 flex-1")
-      router-view
+<template>
+  <div class="min-h-screen flex flex-col">
+    <div class="container mx-auto p-4 flex-1">
+      <RouterView />
+    </div>
 
-    Footer
+    <Footer />
+  </div>
 </template>
 
 <script>

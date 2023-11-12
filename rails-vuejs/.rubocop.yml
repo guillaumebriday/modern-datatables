@@ -17,7 +17,6 @@ Rails/UnknownEnv:
     - development
     - test
 
-
 Style/Documentation:
   Enabled: false
 
