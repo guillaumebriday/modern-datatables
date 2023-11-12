@@ -18,16 +18,11 @@ group :development, :test do
   gem 'rubocop-rspec'
 
   gem 'bcrypt_pbkdf'
-  gem 'capistrano', require: false
-  gem 'capistrano3-delayed-job', require: false
-  gem 'capistrano3-puma', '~> 4.0', require: false
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-rvm', require: false
   gem 'ed25519'
+  gem 'kamal'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'listen', '~> 3.2'
-  gem 'web-console', github: 'rails/web-console'
+  gem 'listen', '~> 3.3'
 end
