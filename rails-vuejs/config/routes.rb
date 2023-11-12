@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get :up, to: 'rails/health#show'
+
   root to: 'application#index'
+
   get '*path', to: 'application#index', format: false
 end
