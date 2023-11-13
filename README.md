@@ -1,7 +1,5 @@
 # Modern datatables
 
-[![](https://img.shields.io/github/license/guillaumebriday/modern-datatables)](https://github.com/guillaumebriday/modern-datatables)
-
 ## Concept Overview
 
 This project shows how to build a **modern** real life application with in two different ways.
