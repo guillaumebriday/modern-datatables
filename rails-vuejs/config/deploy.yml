@@ -9,8 +9,6 @@ servers:
   web:
     hosts:
       - 163.172.172.132
-    options:
-      "add-host": host.docker.internal:host-gateway
     labels:
       traefik.http.routers.rails_vuejs.entrypoints: websecure
       traefik.http.routers.rails_vuejs.rule: Host(`rails-vuejs.guillaumebriday.fr`)
