@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: data/production.sqlite3
+  database: data/production_rails_hotwire.sqlite3
