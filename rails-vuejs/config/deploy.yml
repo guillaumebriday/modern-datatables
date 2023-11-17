@@ -29,6 +29,7 @@ registry:
 env:
   clear:
     RUBY_YJIT_ENABLE: 1
+    RAILS_SERVE_STATIC_FILES: true
   secret:
     - RAILS_MASTER_KEY
 
