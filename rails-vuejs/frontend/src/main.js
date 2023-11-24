@@ -4,6 +4,8 @@ import { router } from '@/router'
 import { createHead } from '@unhead/vue'
 import App from '@/components/App.vue'
 
+import './style.css'
+
 const head = createHead()
 
 const app = createApp(App, {

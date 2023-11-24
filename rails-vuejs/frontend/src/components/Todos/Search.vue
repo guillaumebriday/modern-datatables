@@ -20,7 +20,7 @@
 
       <input
         v-model="description"
-        class="form-input block w-full pl-10 sm:text-sm sm:leading-5"
+        class="pl-10 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
         placeholder="Search..."
       >
     </div>

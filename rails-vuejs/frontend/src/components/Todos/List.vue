@@ -30,7 +30,7 @@
                   <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                     <span
                       class="cursor-pointer inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4"
-                      :class="[todo.attributes.completed ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800']"
+                      :class="[todo.attributes.completed ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800']"
                       @click.prevent="toggleCompleted(todo)"
                     >
                       {{ todo.attributes.completed }}
@@ -40,7 +40,7 @@
                   <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
                     <RouterLink
                       :to="{ name: 'edit-todo', params: { id: todo.id } }"
-                      class="text-green-600 hover:text-green-900"
+                      class="text-emerald-600 hover:text-emerald-900"
                     >
                       Edit
                     </RouterLink>

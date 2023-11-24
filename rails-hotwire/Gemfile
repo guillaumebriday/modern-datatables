@@ -7,6 +7,7 @@ gem 'puma'
 gem 'rails', '< 7.2'
 gem 'sqlite3'
 
+gem 'cssbundling-rails'
 gem 'importmap-rails'
 gem 'pagy'
 gem 'sprockets-rails'

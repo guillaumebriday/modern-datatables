@@ -15,7 +15,7 @@
             v-model="todo.description"
             type="text"
             placeholder="Your description"
-            class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             :class="{ 'border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red': error}"
           >
         </div>
@@ -32,7 +32,7 @@
           id="completed"
           v-model="todo.completed"
           type="checkbox"
-          class="form-checkbox h-4 w-4 text-green-600 transition duration-150 ease-in-out"
+          class="rounded border-gray-300 text-emerald-600 shadow-sm focus:border-emerald-300 focus:ring focus:ring-offset-0 focus:ring-emerald-200 focus:ring-opacity-50"
         >
       </div>
 
@@ -51,7 +51,7 @@
         <span class="inline-flex rounded-md shadow-sm">
           <RouterLink
             :to="{ name: 'index-todo' }"
-            class="py-2 px-4 border border-gray-300 rounded-md text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-green-300 focus:shadow-outline-green active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out"
+            class="py-2 px-4 border border-gray-300 rounded-md text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-emerald-300 focus:shadow-outline-emerald active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out"
           >
             Back
           </RouterLink>
@@ -60,7 +60,7 @@
         <span class="ml-3 inline-flex rounded-md shadow-sm">
           <button
             type="submit"
-            class="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition duration-150 ease-in-out"
+            class="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-500 focus:outline-none focus:border-emerald-700 focus:shadow-outline-emerald active:bg-emerald-700 transition duration-150 ease-in-out"
           >
             Save
           </button>

@@ -53,7 +53,7 @@
         <span class="shadow-sm rounded-md">
           <RouterLink
             :to="{ name: 'new-todo' }"
-            class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:shadow-outline-green focus:border-green-700 active:bg-green-700 transition duration-150 ease-in-out"
+            class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-500 focus:outline-none focus:shadow-outline-emerald focus:border-emerald-700 active:bg-emerald-700 transition duration-150 ease-in-out"
           >
             Create todo
           </RouterLink>

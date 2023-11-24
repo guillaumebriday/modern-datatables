@@ -23,3 +23,4 @@ routes.txt
 yarn-error.log
 app/views
 .env
+public/index.html

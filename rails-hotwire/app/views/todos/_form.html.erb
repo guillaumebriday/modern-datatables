@@ -6,7 +6,7 @@
       <div class="mt-1 rounded-md shadow-sm">
         <%= f.text_field :description,
                          placeholder: 'Your description',
-                         class: class_names("form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5", 'border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red': f.object.errors[:description].present?) %>
+                         class: class_names("mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50", 'border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red': f.object.errors[:description].present?) %>
       </div>
 
       <p class="mt-2 text-sm text-red-600">
@@ -17,7 +17,7 @@
 
   <div class="relative flex items-start mt-6">
     <div class="flex items-center h-5">
-      <%= f.check_box :completed, class: "form-checkbox h-4 w-4 text-blue-600 transition duration-150 ease-in-out" %>
+      <%= f.check_box :completed, class: "rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 focus:ring-opacity-50" %>
     </div>
 
     <div class="ml-3 text-sm leading-5">
