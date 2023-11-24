@@ -56,5 +56,5 @@ watch(todo, async () => {
   } catch (data) {
     error.value = data.error
   }
-}, { deep: true })
+})
 </script>
