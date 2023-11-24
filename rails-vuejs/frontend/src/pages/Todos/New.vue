@@ -37,8 +37,8 @@ watch(todo, async () => {
     await store.dispatch('addTodo', { params: todo.value })
 
     await router.push({ name: 'index-todo' })
-  } catch ({ response }) {
-    error.value = response.data.error
+  } catch (data) {
+    error.value = data.error
   }
 })
 </script>

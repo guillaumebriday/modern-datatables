@@ -53,8 +53,8 @@ watch(todo, async () => {
     await store.dispatch('updateTodo', { id: todo_.value.id, params: todo.value })
 
     await router.push({ name: 'index-todo' })
-  } catch ({ response }) {
-    error.value = response.data.error
+  } catch (data) {
+    error.value = data.error
   }
 }, { deep: true })
 </script>
