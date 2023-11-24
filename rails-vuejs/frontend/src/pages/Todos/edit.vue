@@ -1,65 +1,60 @@
 <template>
-<div>
-  <div class="mt-4 pt-4">
-    <h3 class="text-lg leading-6 font-medium text-gray-900">
-      Editing Todo
-    </h3>
-  </div>
+  <div>
+    <div class="mt-4 pt-4">
+      <h3 class="text-lg leading-6 font-medium text-gray-900">
+        Editing Todo
+      </h3>
+    </div>
 
-  <TodosForm v-model="todo" :error="error" />
-</div>
+    <TodosForm
+      v-model="todo"
+      :error="error"
+    />
+  </div>
 </template>
 
-<script>
+<script setup>
 import TodosForm from '@/components/Todos/Form'
-import { mapGetters } from 'vuex'
+import { useStore } from 'vuex'
+import { computed, ref, watch, onMounted, nextTick, toRaw } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { useHead } from '@unhead/vue'
 
-export default {
-  components: {
-    TodosForm
-  },
+useHead({
+  title: 'Edit todo'
+})
 
-  metaInfo: {
-    title: 'Edit todo'
-  },
+const store = useStore()
+const route = useRoute()
+const router = useRouter()
 
-  computed: {
-    ...mapGetters({
-      todo_: 'todo'
-    })
-  },
+const loaded = ref(false)
+const error = ref(null)
+const todo = ref({})
 
-  data () {
-    return {
-      loaded: false,
-      error: null,
-      todo: {}
-    }
-  },
+const todo_ = computed(() => store.getters.todo)
 
-  async created () {
-    await this.$store.dispatch('fetchTodo', { id: this.$route.params.id })
+onMounted(async () => {
+  await store.dispatch('fetchTodo', { id: route.params.id })
 
-    this.todo = {...this.todo_.attributes}
+  todo.value = toRaw(todo_.value.attributes)
 
-    this.$nextTick(() => {
-      this.loaded = true
-    })
-  },
+  await nextTick(() => {
+    loaded.value = true
+  })
+})
 
-  watch: {
-    async todo () {
-      if (!this.loaded) return
+watch(todo, async () => {
+  if (!loaded.value) return
 
-      this.error = null
+  error.value = null
 
-      try {
-        await this.$store.dispatch('updateTodo', { id: this.todo_.id, params: this.todo })
-        await this.$router.push({ name: 'index-todo' })
-      } catch ({ response }) {
-        this.error = response.data.error
-      }
-    }
+  try {
+    await store.dispatch('updateTodo', { id: todo_.value.id, params: todo.value })
+
+    await router.push({ name: 'index-todo' })
+  } catch ({ response }) {
+    error.value = response.data.error
   }
-}
+}, { deep: true })
 </script>

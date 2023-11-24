@@ -1,45 +1,44 @@
 <template>
-<div>
-  <div class="mt-4 pt-4">
-    <h3 class="text-lg leading-6 font-medium text-gray-900">
-      New Todo
-    </h3>
-  </div>
+  <div>
+    <div class="mt-4 pt-4">
+      <h3 class="text-lg leading-6 font-medium text-gray-900">
+        New Todo
+      </h3>
+    </div>
 
-  <TodosForm v-model="todo" :error="error" />
-</div>
+    <TodosForm
+      v-model="todo"
+      :error="error"
+    />
+  </div>
 </template>
 
-<script>
+<script setup>
 import TodosForm from '@/components/Todos/Form'
+import { ref, watch } from 'vue'
+import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
+import { useHead } from '@unhead/vue'
 
-export default {
-  components: {
-    TodosForm
-  },
+useHead({
+  title: 'Create todo'
+})
 
-  metaInfo: {
-    title: 'Create todo'
-  },
+const error = ref(null)
+const todo = ref({})
 
-  data () {
-    return {
-      error: null,
-      todo: {}
-    }
-  },
+const store = useStore()
+const router = useRouter()
 
-  watch: {
-    async todo () {
-      this.error = null
+watch(todo, async () => {
+  error.value = null
 
-      try {
-        await this.$store.dispatch('addTodo', { params: this.todo })
-        await this.$router.push({ name: 'index-todo' })
-      } catch ({ response }) {
-        this.error = response.data.error
-      }
-    }
+  try {
+    await store.dispatch('addTodo', { params: todo.value })
+
+    await router.push({ name: 'index-todo' })
+  } catch ({ response }) {
+    error.value = response.data.error
   }
-}
+})
 </script>
