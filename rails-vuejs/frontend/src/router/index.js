@@ -1,14 +1,11 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
-const TodosIndex = () => import('@/pages/Todos/index')
-const NewTodo = () => import('@/pages/Todos/new')
-const EditTodo = () => import('@/pages/Todos/edit')
+const TodosIndex = () => import('@/pages/Todos/Index.vue')
+const NewTodo = () => import('@/pages/Todos/New.vue')
+const EditTodo = () => import('@/pages/Todos/Edit.vue')
 
-Vue.use(VueRouter)
-
-export default new VueRouter({
-  mode: 'history',
+export const router = createRouter({
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -26,7 +23,7 @@ export default new VueRouter({
       component: EditTodo
     },
     {
-      path: '*',
+      path: '/:pathMatch(.*)*',
       redirect: '/'
     }
   ]

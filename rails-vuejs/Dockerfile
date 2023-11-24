@@ -41,7 +41,8 @@ COPY . .
 # Install node modules
 RUN cd frontend && \
     yarn install --frozen-lockfile --non-interactive && \
-    yarn build
+    yarn build && \
+    mv ../public/index.html ../app/views/application.html.erb
 
 # Final stage for app image
 FROM base

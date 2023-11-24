@@ -8,16 +8,11 @@
   </div>
 </template>
 
-<script>
-import Footer from '@/components/Shared/Footer'
+<script setup>
+import Footer from '@/components/Shared/Footer.vue'
+import { useHead } from '@unhead/vue'
 
-export default {
-  components: {
-    Footer
-  },
-
-  metaInfo: {
-    titleTemplate: '%s | Modern Datatables'
-  }
-}
+useHead({
+  titleTemplate: '%s | Modern Datatables'
+})
 </script>

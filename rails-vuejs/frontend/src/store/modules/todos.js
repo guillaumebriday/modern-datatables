@@ -1,10 +1,10 @@
-import axios from 'axios'
+import { jsonFetch } from '@/utils/fetch'
 
 const state = {
   todos: [],
   todo: {},
   links: {},
-  endpoint: '/todos/'
+  endpoint: '/api/v1/todos'
 }
 
 const mutations = {
@@ -42,8 +42,8 @@ const getters = {
 
 const actions = {
   fetchTodos ({ commit }, params = {}) {
-    return axios.get(state.endpoint, { params })
-      .then(({ data }) => {
+    return jsonFetch(state.endpoint, { params })
+      .then(data => {
         commit('setTodos', data.data)
         commit('setLinks', data.links)
 
@@ -55,8 +55,8 @@ const actions = {
   },
 
   fetchTodo ({ commit }, { id }) {
-    return axios.get(state.endpoint + id)
-      .then(({ data }) => {
+    return jsonFetch(`${state.endpoint}/${id}`)
+      .then(data => {
         commit('setTodo', data.data)
 
         return data.data
@@ -67,8 +67,11 @@ const actions = {
   },
 
   addTodo (_, { params }) {
-    return axios.post(state.endpoint, { todo: params })
-      .then(({ data }) => {
+    return jsonFetch(state.endpoint, {
+      method: 'POST',
+      body: { todo: params }
+    })
+      .then(data => {
         return data
       })
       .catch(error => {
@@ -77,8 +80,11 @@ const actions = {
   },
 
   updateTodo ({ commit }, { id, params }) {
-    return axios.patch(state.endpoint + id, { todo: params })
-      .then(({ data }) => {
+    return jsonFetch(`${state.endpoint}/${id}`, {
+      method: 'PATCH',
+      body: { todo: params }
+    })
+      .then(data => {
         commit('updateTodo', data.data)
         return data.data
       })
