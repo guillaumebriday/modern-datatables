@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import TodosForm from '@/components/Todos/Form'
+import TodosForm from '@/components/Todos/Form.vue'
 import { useStore } from 'vuex'
 import { computed, ref, watch, onMounted, nextTick, toRaw } from 'vue'
 import { useRoute, useRouter } from 'vue-router'

@@ -75,9 +75,9 @@
 <script setup>
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
-import TodosList from '@/components/Todos/List'
-import TodosEmpty from '@/components/Todos/Empty'
-import TodosSearch from '@/components/Todos/Search'
+import TodosList from '@/components/Todos/List.vue'
+import TodosEmpty from '@/components/Todos/Empty.vue'
+import TodosSearch from '@/components/Todos/Search.vue'
 import { computed, onMounted } from 'vue'
 import { useHead } from '@unhead/vue'
 

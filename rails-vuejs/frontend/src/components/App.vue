@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import Footer from '@/components/Shared/Footer'
+import Footer from '@/components/Shared/Footer.vue'
 import { useHead } from '@unhead/vue'
 
 useHead({

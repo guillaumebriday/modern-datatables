@@ -61,7 +61,7 @@
 </template>
 
 <script setup>
-import Pagination from '@/components/Shared/Pagination'
+import Pagination from '@/components/Shared/Pagination.vue'
 import { defineProps, ref, watch } from 'vue'
 import { useStore } from 'vuex'
 

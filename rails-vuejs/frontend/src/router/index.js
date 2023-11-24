@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-const TodosIndex = () => import('@/pages/Todos/Index')
-const NewTodo = () => import('@/pages/Todos/New')
-const EditTodo = () => import('@/pages/Todos/Edit')
+const TodosIndex = () => import('@/pages/Todos/Index.vue')
+const NewTodo = () => import('@/pages/Todos/New.vue')
+const EditTodo = () => import('@/pages/Todos/Edit.vue')
 
 export const router = createRouter({
   history: createWebHistory(),
