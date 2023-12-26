@@ -35,7 +35,16 @@
   </div>
 </div>
 
-<%= form_for todos_url, method: :get, html: { class: "pb-5 flex mb-0", data: { turbo_frame: 'todos_list', turbo_action: 'advance' } } do |f| %>
+<%= form_for todos_url,
+             method: :get,
+             html: {
+               class: "pb-5 flex mb-0",
+               data: {
+                 controller: 'autosave',
+                 turbo_frame: 'todos_list',
+                 turbo_action: 'advance'
+               }
+             } do %>
   <div class="mt-1 relative rounded-md shadow-sm">
     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
       <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -46,7 +55,8 @@
     <%= search_field_tag :description,
                          params[:description],
                          class: "pl-10 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50",
-                         placeholder: "Search..." %>
+                         placeholder: "Search...",
+                         data: { action: 'keyup->autosave#save' } %>
   </div>
 <% end %>
 
