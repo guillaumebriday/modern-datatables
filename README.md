@@ -16,7 +16,9 @@ In this repo, you'll find two apps:
 
 They have the exact same features and level of responsiveness.
 
-I'll talk about all the differences in a [blog post](https://guillaumebriday.fr/articles) soon.
+👉 Here is a blog post with some details of how it works under the hood: https://guillaumebriday.fr/hotwire-reactive-search-form-without-javascript
+
+👉 You can already use [Stimulus Rails Autosave](https://www.stimulus-components.com/docs/stimulus-rails-autosave) to auto-submit your forms with Stimulus without writing a single line of custom JavaScript.
 
 ## Demo
 
