@@ -8,12 +8,18 @@ This project is designed to use Rails in his all glory, [as a monolith](https://
 
 Development environment requirements:
 - [Ruby](https://www.ruby-lang.org/en/)
+- [Node](https://nodejs.org/en/)
 
 ```bash
 $ git clone git@github.com:guillaumebriday/modern-datatables.git && cd modern-datatables/rails-hotwire
 $ bundle
 $ bundle exec rails db:migrate
 $ bundle exec rails s
+```
+
+```bash
+$ yarn
+$ yarn build:css --watch
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
