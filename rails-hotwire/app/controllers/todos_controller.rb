@@ -5,7 +5,10 @@ class TodosController < ApplicationController
 
   def index
     @title = 'Todos'
-    @pagy, @todos = pagy Todo.by_description(params[:description]).order(created_at: :desc)
+    @pagy, @todos = pagy Todo
+                          .by_description(params[:description])
+                          .by_completed(params[:completed])
+                          .order(created_at: :desc)
   end
 
   def new

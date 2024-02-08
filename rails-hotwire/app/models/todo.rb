@@ -12,4 +12,10 @@ class Todo < ApplicationRecord
 
     where(arel_table[:description].matches("%#{description}%"))
   }
+
+  scope :by_completed, ->(completed) {
+    return if completed.blank?
+
+    where(completed: completed)
+  }
 end
