@@ -8,5 +8,12 @@ module.exports = {
   ],
   plugins: [
     require('@tailwindcss/forms')
-  ]
+  ],
+  theme: {
+    extend: {
+      boxShadow: {
+        'outline-blue': `0 0 0 3px rgba(191, 219, 254, .5)`,
+      }
+    }
+  }
 }
