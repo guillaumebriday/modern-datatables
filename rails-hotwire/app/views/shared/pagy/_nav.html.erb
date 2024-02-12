@@ -21,13 +21,13 @@
 <nav class="mt-12 py-3 flex items-center justify-between" role="navigation">
   <div class="flex-1 flex justify-between sm:hidden">
     <% if pagy.prev %>
-      <%== link.call(pagy.prev, "Previous", "aria-label='previous' class='page'") %>
+      <%== link.call(pagy.prev, "Previous", "aria-label='previous' class='page' data-turbo-action='advance'") %>
     <% else %>
       <div></div>
     <% end %>
 
     <% if pagy.next %>
-      <%== link.call(pagy.next, "Next", "aria-label='next' class='page'") %>
+      <%== link.call(pagy.next, "Next", "aria-label='next' class='page' data-turbo-action='advance'") %>
     <% else %>
       <div></div>
     <% end %>
@@ -61,7 +61,7 @@
     <div>
       <span class="relative z-0 inline-flex shadow-sm">
         <% if pagy.prev %>
-          <%== link.call(pagy.prev, content_for(:prev), "aria-label='previous'") %>
+          <%== link.call(pagy.prev, content_for(:prev), "aria-label='previous' data-turbo-action='advance'") %>
         <% else %>
           <%= content_for(:prev) %>
         <% end %>
@@ -69,9 +69,9 @@
         <% pagy.series.each do |item| # series example: [1, :gap, 7, 8, "9", 10, 11, :gap, 36] %>
           <% case item %>
           <% when Integer # page link %>
-            <%== link.call(item, item, "class='page--link'") %>
+            <%== link.call(item, item, "class='page--link' data-turbo-action='advance'") %>
           <% when String # current page %>
-            <%== link.call(item, item, "class='page--link active'") %>
+            <%== link.call(item, item, "class='page--link active' data-turbo-action='advance'") %>
           <% when :gap # page gap %>
             <span class="page--link">
               <%== pagy_t('pagy.nav.gap') %>
@@ -80,7 +80,7 @@
         <% end %>
 
         <% if pagy.next %>
-          <%== link.call(pagy.next, content_for(:next), "aria-label='next'") %>
+          <%== link.call(pagy.next, content_for(:next), "aria-label='next' data-turbo-action='advance'") %>
         <% else %>
           <%= content_for(:next) %>
         <% end %>
