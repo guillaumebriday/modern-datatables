@@ -1,0 +1,30 @@
+<%= turbo_frame_tag comment do %>
+  <article class="py-6 text-base bg-white rounded-lg">
+    <div class="flex justify-between items-center mb-2">
+      <div class="flex items-center">
+        <p class="inline-flex items-center mr-3 text-sm text-gray-900 font-semibold">
+          <img
+            class="mr-2 w-6 h-6 rounded-full"
+            src="https://www.gravatar.com/avatar/20d8cf689b975dc2f26bd966284185e7?d=mp&s=80"
+            alt="Profile picture"
+          >
+          Guillaume Briday
+        </p>
+
+        <p class="text-sm text-gray-600">
+          <%= timeago(comment.created_at) %>
+        </p>
+
+        <%= button_to comment_path(comment), method: :delete, data: { turbo_confirm: 'Are you sure?' } do %>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-3 w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+          </svg>
+        <% end %>
+      </div>
+    </div>
+
+    <p class="text-gray-500">
+      <%= comment.description %>
+    </p>
+  </article>
+<% end %>

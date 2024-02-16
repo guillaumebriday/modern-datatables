@@ -1,0 +1,15 @@
+<%= turbo_frame_tag 'comments' do %>
+  <%= turbo_frame_tag "comments_#{pagy.page}" do %>
+    <% if comments.present? %>
+        <%= render partial: 'comments/comment', collection: comments %>
+    <% else %>
+      <%= render 'shared/no_content' %>
+    <% end %>
+
+    <% if pagy.next %>
+      <%= turbo_frame_tag "comments_#{pagy.next}", src: comments_path(todo_id: todo.id, page: pagy.next), loading: :lazy do %>
+        <%= loading_tag %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

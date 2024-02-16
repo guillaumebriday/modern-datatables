@@ -3,6 +3,8 @@
 class Todo < ApplicationRecord
   after_update_commit { broadcast_replace_to 'todos', partial: 'todos/todo', locals: { todo: self } }
 
+  has_many :comments, dependent: :destroy
+
   validates :description,
             uniqueness: true,
             presence: true
