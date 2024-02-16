@@ -9,6 +9,8 @@ class TodosController < ApplicationController
                           .by_description(params[:description])
                           .by_completed(params[:completed])
                           .order(created_at: :desc)
+
+    set_counts
   end
 
   def new
@@ -47,14 +49,19 @@ class TodosController < ApplicationController
   def toggle_completed
     @todo.update(completed: !@todo.completed?)
 
-    render turbo_stream: turbo_stream.replace(@todo, partial: 'todos/todo',
-                                                     locals: { todo: @todo, todo_counter: params[:todo_counter]&.to_i })
+    set_counts
   end
 
   private
 
   def set_todo
     @todo = Todo.find(params[:id])
+  end
+
+  def set_counts
+    @all_count = Todo.all.async_count
+    @completed_count = Todo.by_completed(true).async_count
+    @in_progress_count = Todo.by_completed(false).async_count
   end
 
   def todo_params

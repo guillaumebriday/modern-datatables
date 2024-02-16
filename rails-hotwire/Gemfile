@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'puma'
-gem 'rails', '< 7.2'
+gem 'rails', github: 'rails/rails', branch: '7-1-stable'
 gem 'sqlite3'
 
 gem 'cssbundling-rails'
@@ -13,6 +13,7 @@ gem 'pagy'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+gem 'view_component'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

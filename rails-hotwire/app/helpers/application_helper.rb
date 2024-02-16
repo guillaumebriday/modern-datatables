@@ -3,11 +3,7 @@
 module ApplicationHelper
   include Pagy::Frontend
 
-  def options_for_completed_status
-    options_for_select([
-      ['All', nil],
-      ['Completed', true],
-      ['In progress', false]
-    ])
+  def permitted_params
+    params.slice(:page, :per_page).permit!.to_h
   end
 end

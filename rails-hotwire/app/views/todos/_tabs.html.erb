@@ -1,0 +1,30 @@
+<div id="todos_tabs">
+  <%
+    links = [
+      {
+        name: 'All',
+        path: todos_path(permitted_params.merge(completed: nil)),
+        count: @all_count.value,
+        active: params[:completed].blank?
+      },
+      {
+        name: 'Completed',
+        path: todos_path(permitted_params.merge(completed: true)),
+        count: @completed_count.value,
+        active: params[:completed] == "true"
+      },
+      {
+        name: 'In progress',
+        path: todos_path(permitted_params.merge(completed: false)),
+        count: @in_progress_count.value,
+        active: params[:completed] == "false"
+      }
+    ]
+  %>
+
+  <%= tab_component do |tabs| %>
+    <% links.each do |link| %>
+      <%= tabs.with_item(link) %>
+    <% end %>
+  <% end %>
+</div>

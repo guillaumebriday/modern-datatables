@@ -14,7 +14,7 @@ class Todo < ApplicationRecord
   }
 
   scope :by_completed, ->(completed) {
-    return if completed.blank?
+    return if completed.nil?
 
     where(completed: completed)
   }

@@ -1,0 +1,9 @@
+<%= turbo_stream.replace(
+      @todo,
+      partial: 'todos/todo',
+      locals: {
+        todo: @todo,
+        todo_counter: params[:todo_counter]&.to_i
+      }) %>
+
+<%= turbo_stream.replace('todos_tabs', partial: 'todos/tabs') %>

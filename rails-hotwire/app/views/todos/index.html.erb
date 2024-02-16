@@ -58,11 +58,6 @@
                          placeholder: "Search...",
                          data: { action: 'keyup->autosave#save' } %>
   </div>
-
-  <%= select_tag :completed,
-                 options_for_completed_status,
-                 class: 'rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50',
-                 data: { action: 'autosave#save' } %>
 <% end %>
 
 <%= render 'todos/list' %>
