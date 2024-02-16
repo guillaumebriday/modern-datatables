@@ -1,8 +1,13 @@
+import { Application } from '@hotwired/stimulus'
+import { registerControllers } from 'stimulus-vite-helpers'
+
+import Timeago from "stimulus-timeago"
 import Autosave from 'stimulus-rails-autosave'
-import { application } from "controllers/application"
 
-import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
-eagerLoadControllersFrom("controllers", application)
+const application = Application.start()
 
+const controllers = import.meta.glob('./**/*_controller.js', { eager: true })
+registerControllers(application, controllers)
 
-application.register('autosave', Autosave)
+application.register("timeago", Timeago)
+application.register("autosave", Autosave)

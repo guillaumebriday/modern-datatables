@@ -34,3 +34,6 @@ yarn.lock
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# Vite Ruby
+/public/vite*

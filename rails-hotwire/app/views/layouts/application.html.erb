@@ -6,12 +6,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= javascript_importmap_tags %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-
     <%= turbo_refreshes_with method: :morph, scroll: :preserve  %>
 
     <script defer data-domain="rails-hotwire.guillaumebriday.fr" src="https://plausible.io/js/script.js"></script>
+
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag 'application', 'data-turbo-track': 'reload' %>
   </head>
 
   <body>
