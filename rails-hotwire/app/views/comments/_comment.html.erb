@@ -1,0 +1,22 @@
+<article class="py-6 text-base bg-white rounded-lg">
+  <footer class="flex justify-between items-center mb-2">
+    <div class="flex items-center">
+      <p class="inline-flex items-center mr-3 text-sm text-gray-900 font-semibold">
+        <img
+          class="mr-2 w-6 h-6 rounded-full"
+          src="https://avatars.githubusercontent.com/u/8252238?v=4"
+          alt="User"
+        >
+        Guillaume Briday
+      </p>
+
+      <p class="text-sm text-gray-600">
+        <%= timeago(comment.created_at) %>
+      </p>
+    </div>
+  </footer>
+
+  <p class="text-gray-500">
+    <%= comment.description %>
+  </p>
+</article>

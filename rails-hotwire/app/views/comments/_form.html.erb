@@ -1,0 +1,21 @@
+<%= form_with model: comment, id: 'comment_form', class: 'mb-8' do |f| %>
+  <%= f.hidden_field :todo_id, value: comment.todo_id %>
+
+  <div class="sm:col-span-3">
+    <%= f.label :description, class: "block text-sm font-medium leading-5 text-gray-700" %>
+
+    <div class="mt-1 rounded-md shadow-sm">
+      <%= f.text_area :description,
+                       placeholder: 'Your comment',
+                       class: class_names("mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50", 'border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red': f.object.errors[:description].present?) %>
+    </div>
+
+    <p class="mt-2 text-sm text-red-600">
+      <%= f.object.errors.full_messages_for(:description).first %>
+    </p>
+  </div>
+
+  <span class="inline-flex rounded-md shadow-sm">
+    <%= f.submit 'Submit', class: "inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition duration-150 ease-in-out" %>
+  </span>
+<% end %>

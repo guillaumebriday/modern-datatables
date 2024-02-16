@@ -1,14 +1,19 @@
 # frozen_string_literal: true
 
 class BadgeComponent < ApplicationComponent
-  def initialize(classes: nil, value: nil, variant: nil)
+  def initialize(id: nil, classes: nil, value: nil, variant: nil)
+    @id = id
     @classes = classes
     @value = value
     @variant = variant
   end
 
   def call
-    tag.span(@value, class: class_names('inline-block text-xs text-center px-2 py-1 align-middle rounded-md font-semibold ring-1 ring-inset', @classes, colors))
+    tag.span(
+      @value,
+      id: @id,
+      class: class_names('inline-block text-xs text-center px-2 py-1 align-middle rounded-md font-semibold ring-1 ring-inset', @classes, colors)
+    )
   end
 
   private
