@@ -3,8 +3,51 @@
 module ApplicationHelper
   include Pagy::Frontend
 
+  def sort_link_to(name = nil, sort_name = nil, &block) # rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
+    if block.present?
+      sort_name = name
+      name = capture(&block)
+    end
+
+    current_sort = params[:sort]
+    current_sort = params[:sort][1..] if params[:sort].present? && params[:sort].start_with?('-')
+
+    icon = if current_sort != sort_name || current_sort.blank?
+             <<~HTML.html_safe
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline ml-2 w-4 h-4">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+               </svg>
+             HTML
+           elsif params[:sort].start_with?('-') && current_sort == sort_name
+             <<~HTML.html_safe
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline ml-2 w-4 h-4">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+               </svg>
+             HTML
+           else
+             <<~HTML.html_safe
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline ml-2 w-4 h-4">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+               </svg>
+             HTML
+           end
+
+    sort = if current_sort != sort_name || !params[:sort].start_with?('-')
+             "-#{sort_name}"
+           else
+             sort_name
+           end
+
+    link_to url_for(permitted_params.merge(sort: sort)), data: { turbo_action: 'replace' } do
+      [
+        name,
+        icon
+      ].join.html_safe # rubocop:disable Rails/OutputSafety
+    end
+  end
+
   def permitted_params
-    params.slice(:page, :per_page).permit!.to_h
+    params.slice(:page, :per_page, :completed).permit!.to_h
   end
 
   def timeago(date, format: :long)

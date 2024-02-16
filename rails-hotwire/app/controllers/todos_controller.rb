@@ -8,7 +8,7 @@ class TodosController < ApplicationController
     @pagy, @todos = pagy Todo
                           .by_description(params[:description])
                           .by_completed(params[:completed])
-                          .order(created_at: :desc)
+                          .apply_sort(params)
 
     set_counts
   end
