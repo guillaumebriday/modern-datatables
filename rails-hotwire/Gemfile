@@ -8,7 +8,6 @@ gem 'rails', github: 'rails/rails', branch: '7-1-stable'
 gem 'sqlite3'
 
 gem 'pagy'
-gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'view_component'
