@@ -11,6 +11,7 @@ class Todo < ApplicationRecord
             uniqueness: true,
             presence: true
 
+  scope :order_by_created_at, ->(direction = :asc) { order(created_at: direction) }
   scope :order_by_description, ->(direction = :asc) { order(description: direction) }
   scope :order_by_completed, ->(direction = :asc) { order(completed: direction) }
   scope :by_description, ->(description) {

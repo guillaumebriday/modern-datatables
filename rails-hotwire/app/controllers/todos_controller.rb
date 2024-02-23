@@ -4,6 +4,8 @@ class TodosController < ApplicationController
   before_action :set_todo, only: %i[edit update toggle_completed]
 
   def index
+    params[:sort] ||= '-created_at'
+
     @title = 'Todos'
     @pagy, @todos = pagy Todo
                           .by_description(params[:description])
