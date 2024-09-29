@@ -56,12 +56,12 @@ module ApplicationHelper
     content = I18n.l(date, format: format)
 
     tag.time(content,
-              title: content,
-              data: {
-                controller: 'timeago',
-                timeago_datetime_value: date.iso8601,
-                timeago_add_suffix_value: true
-              })
+             title: content,
+             data: {
+               controller: 'timeago',
+               timeago_datetime_value: date.iso8601,
+               timeago_add_suffix_value: true
+             })
   end
 
   def loading_tag

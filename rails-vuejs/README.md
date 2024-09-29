@@ -24,7 +24,5 @@ To run the frontend, in other console:
 ```bash
 $ cd frontend
 $ yarn
-$ yarn serve
+$ yarn dev
 ```
-
-Open [http://localhost:8080](http://localhost:8080) in your browser.

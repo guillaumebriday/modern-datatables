@@ -21,6 +21,6 @@ routes.txt
 /coverage
 /storage
 yarn-error.log
-app/views
+!/app/views/.keep
 .env
 public/index.html

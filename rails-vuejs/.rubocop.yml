@@ -34,3 +34,6 @@ Rails/UniqueValidationWithoutIndex:
 
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never

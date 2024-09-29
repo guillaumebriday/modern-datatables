@@ -37,3 +37,6 @@ Style/ClassAndModuleChildren:
 
 Rails/I18nLocaleTexts:
   Enabled: false
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never

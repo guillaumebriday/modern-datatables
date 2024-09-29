@@ -8,9 +8,9 @@ class TodosController < ApplicationController
 
     @title = 'Todos'
     @pagy, @todos = pagy Todo
-                          .by_description(params[:description])
-                          .by_completed(params[:completed])
-                          .apply_sort(params)
+                    .by_description(params[:description])
+                    .by_completed(params[:completed])
+                    .apply_sort(params)
 
     set_counts
   end
@@ -61,7 +61,7 @@ class TodosController < ApplicationController
   end
 
   def set_counts
-    @all_count = Todo.all.async_count
+    @all_count = Todo.async_count
     @completed_count = Todo.by_completed(true).async_count
     @in_progress_count = Todo.by_completed(false).async_count
   end

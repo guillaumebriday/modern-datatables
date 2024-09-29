@@ -12,7 +12,9 @@ class BadgeComponent < ApplicationComponent
     tag.span(
       @value,
       id: @id,
-      class: class_names('inline-block text-xs text-center px-2 py-1 align-middle rounded-md font-semibold ring-1 ring-inset', @classes, colors)
+      class: class_names(
+        'inline-block text-xs text-center px-2 py-1 align-middle rounded-md font-semibold ring-1 ring-inset', @classes, colors
+      )
     )
   end
 

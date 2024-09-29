@@ -21,7 +21,8 @@ class CommentsController < ApplicationController
     if comment.save
       render turbo_stream: [
         turbo_stream.prepend('comments', partial: 'comments/comment', locals: { comment: comment }),
-        turbo_stream.replace('comment_form', partial: 'comments/form', locals: { comment: Comment.new(todo: comment.todo) }),
+        turbo_stream.replace('comment_form', partial: 'comments/form',
+                                             locals: { comment: Comment.new(todo: comment.todo) }),
         turbo_stream.update('comments_count', comment.todo.comments.count),
         turbo_stream.remove('no_content')
       ]
