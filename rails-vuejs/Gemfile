@@ -20,7 +20,7 @@ group :development, :test do
 
   gem 'bcrypt_pbkdf'
   gem 'ed25519'
-  gem 'kamal', '< 2'
+  gem 'kamal'
 end
 
 group :development do

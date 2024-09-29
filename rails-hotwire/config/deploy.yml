@@ -1,3 +1,5 @@
+<% require "dotenv"; Dotenv.load(".env") %>
+
 # Name of your application. Used to uniquely configure containers.
 service: rails-hotwire
 
@@ -9,10 +11,6 @@ servers:
   web:
     hosts:
       - 163.172.172.132
-    labels:
-      traefik.http.routers.rails_hotwire.entrypoints: websecure
-      traefik.http.routers.rails_hotwire.rule: Host(`rails-hotwire.guillaumebriday.fr`)
-      traefik.http.routers.rails_hotwire.tls.certresolver: letsencrypt
 
 # Credentials for your image host.
 registry:
@@ -35,27 +33,10 @@ env:
 volumes:
   - "data:/rails/data"
 
-# Configure custom arguments for Traefik
-traefik:
-  options:
-    publish:
-      - "443:443"
-    volume:
-      - "/letsencrypt/acme.json:/letsencrypt/acme.json"
-  args:
-    entryPoints.web.address: ":80"
-    entryPoints.websecure.address: ":443"
-    entryPoints.web.http.redirections.entryPoint.to: websecure
-    entryPoints.web.http.redirections.entryPoint.scheme: https
-    entryPoints.web.http.redirections.entrypoint.permanent: true
-    certificatesResolvers.letsencrypt.acme.email: "guillaumebriday@gmail.com"
-    certificatesResolvers.letsencrypt.acme.storage: "/letsencrypt/acme.json"
-    certificatesResolvers.letsencrypt.acme.httpchallenge: true
-    certificatesResolvers.letsencrypt.acme.httpchallenge.entrypoint: web
+proxy:
+  app_port: 3000
+  ssl: true
+  host: rails-hotwire.guillaumebriday.fr
 
 builder:
-  local:
-    arch: amd64
-  cache:
-    type: registry
-    options: mode=max,image-manifest=true,oci-mediatypes=true
+  arch: amd64
