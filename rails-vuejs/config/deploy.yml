@@ -10,7 +10,7 @@ image: guillaumebriday/rails-vuejs
 servers:
   web:
     hosts:
-      - 163.172.172.132
+      - 51.159.152.188
 
 # Credentials for your image host.
 registry:
