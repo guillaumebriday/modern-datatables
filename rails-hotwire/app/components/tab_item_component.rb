@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TabItemComponent < ApplicationComponent
-  def initialize(options = {})
+  def initialize(options = {}) # rubocop:disable Lint/MissingSuper
     @options = options
 
     @path = @options.delete(:path)

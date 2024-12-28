@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BadgeComponent < ApplicationComponent
-  def initialize(id: nil, classes: nil, value: nil, variant: nil)
+  def initialize(id: nil, classes: nil, value: nil, variant: nil) # rubocop:disable Lint/MissingSuper
     @id = id
     @classes = classes
     @value = value
@@ -13,7 +13,9 @@ class BadgeComponent < ApplicationComponent
       @value,
       id: @id,
       class: class_names(
-        'inline-block text-xs text-center px-2 py-1 align-middle rounded-md font-semibold ring-1 ring-inset', @classes, colors
+        'inline-block text-xs text-center px-2 py-1 align-middle rounded-md font-semibold ring-1 ring-inset',
+        @classes,
+        colors
       )
     )
   end

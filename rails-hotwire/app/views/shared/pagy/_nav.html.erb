@@ -1,5 +1,5 @@
 <%
-  link = pagy_link_proc(pagy)
+  link = pagy_anchor(pagy, anchor_string: "data-turbo-action='advance'")
 %>
 
 <% content_for :prev do %>
@@ -21,13 +21,13 @@
 <nav class="mt-12 py-3 flex items-center justify-between" role="navigation">
   <div class="flex-1 flex justify-between sm:hidden">
     <% if pagy.prev %>
-      <%== link.call(pagy.prev, "Previous", "aria-label='previous' class='page' data-turbo-action='advance'") %>
+      <%== link.(pagy.prev, "Previous", aria_label: 'previous', classes: 'page') %>
     <% else %>
       <div></div>
     <% end %>
 
     <% if pagy.next %>
-      <%== link.call(pagy.next, "Next", "aria-label='next' class='page' data-turbo-action='advance'") %>
+      <%== link.(pagy.next, "Next", aria_label: 'next', classes: 'page') %>
     <% else %>
       <div></div>
     <% end %>
@@ -61,7 +61,7 @@
     <div>
       <span class="relative z-0 inline-flex shadow-sm">
         <% if pagy.prev %>
-          <%== link.call(pagy.prev, content_for(:prev), "aria-label='previous' data-turbo-action='advance'") %>
+          <%== link.(pagy.prev, content_for(:prev), aria_label: 'previous') %>
         <% else %>
           <%= content_for(:prev) %>
         <% end %>
@@ -69,9 +69,9 @@
         <% pagy.series.each do |item| # series example: [1, :gap, 7, 8, "9", 10, 11, :gap, 36] %>
           <% case item %>
           <% when Integer # page link %>
-            <%== link.call(item, item, "class='page--link' data-turbo-action='advance'") %>
+            <%== link.(item, item, classes: 'page--link') %>
           <% when String # current page %>
-            <%== link.call(item, item, "class='page--link active' data-turbo-action='advance'") %>
+            <%== link.(item, item, classes: 'page--link active') %>
           <% when :gap # page gap %>
             <span class="page--link">
               <%== pagy_t('pagy.nav.gap') %>
@@ -80,7 +80,7 @@
         <% end %>
 
         <% if pagy.next %>
-          <%== link.call(pagy.next, content_for(:next), "aria-label='next' data-turbo-action='advance'") %>
+          <%== link.(pagy.next, content_for(:next), aria_label: 'next') %>
         <% else %>
           <%= content_for(:next) %>
         <% end %>

@@ -32,12 +32,12 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    if @comment.destroy
-      render turbo_stream: [
-        turbo_stream.remove(@comment),
-        turbo_stream.update('comments_count', @comment.todo.comments.count),
-      ]
-    end
+    return unless @comment.destroy
+
+    render turbo_stream: [
+      turbo_stream.remove(@comment),
+      turbo_stream.update('comments_count', @comment.todo.comments.count)
+    ]
   end
 
   private

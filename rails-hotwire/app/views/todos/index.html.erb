@@ -40,7 +40,7 @@
              html: {
                class: "pb-5 flex mb-0 gap-2",
                data: {
-                 controller: 'autosave',
+                 controller: 'auto-submit',
                  turbo_frame: 'todos_list',
                  turbo_action: 'advance'
                }
@@ -56,7 +56,7 @@
                          params[:description],
                          class: "pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50",
                          placeholder: "Search...",
-                         data: { action: 'keyup->autosave#save' } %>
+                         data: { action: 'keyup->auto-submit#save' } %>
   </div>
 <% end %>
 

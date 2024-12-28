@@ -26,6 +26,12 @@ Style/EmptyMethod:
 Style/Lambda:
   Enabled: false
 
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
 Naming/MemoizedInstanceVariableName:
   Enabled: false
 
