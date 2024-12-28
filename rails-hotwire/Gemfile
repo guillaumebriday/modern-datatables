@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'bootsnap', require: false
 gem 'puma'
 gem 'rails'
+gem 'solid_cache'
 gem 'sqlite3'
 
 gem 'pagy'
