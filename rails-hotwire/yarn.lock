@@ -695,6 +695,7 @@ __metadata:
     autoprefixer: "npm:^10.4.20"
     lodash.debounce: "npm:^4.0.8"
     postcss: "npm:^8.4.49"
+    rollup-plugin-gzip: "npm:^4.0.1"
     sass: "npm:^1.83.0"
     tailwindcss: "npm:^3.4.17"
     vite: "npm:^5.4.11"
@@ -1966,6 +1967,15 @@ __metadata:
   version: 1.0.4
   resolution: "reusify@npm:1.0.4"
   checksum: 10c0/c19ef26e4e188f408922c46f7ff480d38e8dfc55d448310dfb518736b23ed2c4f547fb64a6ed5bdba92cd7e7ddc889d36ff78f794816d5e71498d645ef476107
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-gzip@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "rollup-plugin-gzip@npm:4.0.1"
+  peerDependencies:
+    rollup: ">=2.0.0"
+  checksum: 10c0/c4e375ddfbe1934acfae6ffdf36d05cb430ba22763669cb08f048e88f67bd0677abde3bb09905263d8c8fc8760b04700e2eecba263cda76a985a33d0776e8084
   languageName: node
   linkType: hard
 
