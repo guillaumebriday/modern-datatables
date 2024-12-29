@@ -9,17 +9,31 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
-development:
+primary: &primary
   <<: *default
-  database: db/development.sqlite3
+  database: data/<%= Rails.env %>_rails_hotwire.sqlite3
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
+cache: &cache
   <<: *default
-  database: db/test.sqlite3
+  migrations_paths: db/cache_migrate
+  database: data/<%= Rails.env %>_rails_hotwire_cache.sqlite3
+
+queue: &queue
+  <<: *default
+  migrations_paths: db/queue_migrate
+  database: data/<%= Rails.env %>_rails_hotwire_queue.sqlite3
+
+development:
+  primary: *primary
+  cache: *cache
+  queue: *queue
+
+test:
+  primary: *primary
+  cache: *cache
+  queue: *queue
 
 production:
-  <<: *default
-  database: data/production_rails_hotwire.sqlite3
+  primary: *primary
+  cache: *cache
+  queue: *queue

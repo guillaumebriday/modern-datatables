@@ -28,7 +28,12 @@ Rails.application.configure do
   end
 
   # Change to :null_store to avoid any caching.
-  config.cache_store = :memory_store
+  config.cache_store = :solid_cache_store
+
+  # Replace the default in-process and non-durable queuing backend for Active Job.
+  config.active_job.queue_adapter = :solid_queue
+  config.solid_queue.connects_to = { database: { writing: :queue } }
+  config.mission_control.jobs.http_basic_auth_enabled = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

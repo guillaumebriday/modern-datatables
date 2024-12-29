@@ -1,7 +1,9 @@
 <%= turbo_frame_tag 'comments' do %>
   <%= turbo_frame_tag "comments_#{pagy.page}" do %>
     <% if comments.present? %>
-        <%= render partial: 'comments/comment', collection: comments %>
+        <%= render partial: 'comments/comment',
+                   collection: comments,
+                   cached: true %>
     <% else %>
       <%= render 'shared/no_content' %>
     <% end %>

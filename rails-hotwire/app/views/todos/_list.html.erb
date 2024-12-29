@@ -19,7 +19,9 @@
                 <div class="table-cell bg-gray-50"></div>
               </div>
 
-              <%= render partial: 'todos/todo', collection: @todos %>
+              <%= render partial: 'todos/todo',
+                         collection: @todos,
+                         cached: true %>
             </div>
           </div>
         </div>

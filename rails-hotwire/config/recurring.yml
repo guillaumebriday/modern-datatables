@@ -1,0 +1,5 @@
+production:
+  periodic_cleanup:
+    class: TodosCleanupJob
+    queue: default
+    schedule: every day
