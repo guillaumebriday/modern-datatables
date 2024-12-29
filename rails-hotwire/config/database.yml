@@ -18,14 +18,22 @@ cache: &cache
   migrations_paths: db/cache_migrate
   database: data/<%= Rails.env %>_rails_hotwire_cache.sqlite3
 
+queue: &queue
+  <<: *default
+  migrations_paths: db/queue_migrate
+  database: data/<%= Rails.env %>_rails_hotwire_queue.sqlite3
+
 development:
   primary: *primary
   cache: *cache
+  queue: *queue
 
 test:
   primary: *primary
   cache: *cache
+  queue: *queue
 
 production:
   primary: *primary
   cache: *cache
+  queue: *queue

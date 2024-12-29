@@ -3,9 +3,12 @@
 source 'https://rubygems.org'
 
 gem 'bootsnap', require: false
+gem 'mission_control-jobs'
+gem 'propshaft'
 gem 'puma'
 gem 'rails'
 gem 'solid_cache'
+gem 'solid_queue'
 gem 'sqlite3'
 
 gem 'pagy'
