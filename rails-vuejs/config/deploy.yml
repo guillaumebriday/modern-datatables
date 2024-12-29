@@ -21,8 +21,6 @@ registry:
 # Inject ENV variables into containers (secrets come from .env).
 # Remember to run `kamal env push` after making changes!
 env:
-  clear:
-    RAILS_SERVE_STATIC_FILES: true
   secret:
     - RAILS_MASTER_KEY
 
@@ -36,3 +34,7 @@ proxy:
 
 builder:
   arch: amd64
+
+aliases:
+  console: app exec -i --reuse "bin/rails console"
+  bash: app exec -i --reuse "bash"

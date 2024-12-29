@@ -10,26 +10,27 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.9",
-    "@unhead/vue": "^1.11.6",
-    "@vitejs/plugin-vue": "^5.1.4",
+    "@unhead/vue": "^1.11.14",
+    "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.13",
-    "vite": "^5.4.8",
-    "vue": "^3.5.10",
-    "vue-router": "^4.4.5",
+    "postcss": "^8.4.49",
+    "rollup-plugin-gzip": "^4.0.1",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.11",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
     "vuex": "^4.1.0"
   },
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.5.10",
+    "@vue/compiler-sfc": "^3.5.13",
     "eslint": "^8.57.1",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.6.0",
     "eslint-plugin-standard": "^5.0.0",
-    "eslint-plugin-vue": "^9.28.0",
-    "vue-eslint-parser": "^9.3.2"
+    "eslint-plugin-vue": "^9.32.0",
+    "vue-eslint-parser": "^9.4.3"
   },
-  "packageManager": "yarn@4.5.0"
+  "packageManager": "yarn@4.5.3"
 }
