@@ -18,7 +18,7 @@ They have the exact same features and level of responsiveness.
 
 👉 Here is a blog post with some details of how it works under the hood: https://guillaumebriday.fr/hotwire-reactive-search-form-without-javascript
 
-👉 You can already use [Stimulus Rails Autosave](https://www.stimulus-components.com/docs/stimulus-rails-autosave) to auto-submit your forms with Stimulus without writing a single line of custom JavaScript.
+👉 You can already use [Stimulus Rails Auto Submit](https://www.stimulus-components.com/docs/stimulus-auto-submit) to auto-submit your forms with Stimulus without writing a single line of custom JavaScript.
 
 ## Demo
 
@@ -32,6 +32,7 @@ Both example are available online 🥳:
 More and more developers come back from building dedicated SPAs and just want to use the power of Vue or React in a classic Backend application.
 
 Many projects help you in multiples frameworks:
+
 - [Hotwire](https://hotwire.dev/)
 - [Laravel Livewire](https://laravel-livewire.com/)
 - [htmx](https://github.com/bigskysoftware/htmx)
