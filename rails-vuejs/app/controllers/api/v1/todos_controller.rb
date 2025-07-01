@@ -41,10 +41,11 @@ class Api::V1::TodosController < Api::V1::BaseController
 
   def todo_params
     params
-      .require(:todo)
-      .permit(
-        :description,
-        :completed
+      .expect(
+        todo: %i[
+          description
+          completed
+        ]
       )
   end
 end

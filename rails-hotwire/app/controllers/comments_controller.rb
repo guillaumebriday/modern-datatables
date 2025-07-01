@@ -51,6 +51,12 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:description, :todo_id)
+    params
+      .expect(
+        comment: %i[
+          description
+          todo_id
+        ]
+      )
   end
 end
