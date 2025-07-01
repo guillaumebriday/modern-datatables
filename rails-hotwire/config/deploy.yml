@@ -36,8 +36,11 @@ proxy:
   ssl: true
   host: rails-hotwire.guillaumebriday.fr
 
+# Configure builder setup.
 builder:
   arch: amd64
+  local: false
+  remote: ssh://root@51.159.152.188
 
 aliases:
   console: app exec -i --reuse "bin/rails console"
